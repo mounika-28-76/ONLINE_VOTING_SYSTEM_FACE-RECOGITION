@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Select Candidate</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:url('https://www.scobserver.in/wp-content/uploads/2024/03/ECI-Appointments.jpg');
+background-size:cover;
+font-family:Arial;
+text-align:center;
+}
+
+.card{
+padding:40px;
+}
+
+button{
+padding:12px 25px;
+background:green;
+color:white;
+border:none;
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>Select Candidate</h2>
+
+<input type="radio" name="candidate" value="A"> Candidate A<br><br>
+<input type="radio" name="candidate" value="B"> Candidate B<br><br>
+<input type="radio" name="candidate" value="C"> Candidate C<br><br>
+
+<button onclick="submitVote()">Submit Vote</button>
+
+</div>
+
+<script>
+
+function submitVote(){
+
+let candidate=document.querySelector('input[name="candidate"]:checked');
+
+if(!candidate){
+alert("Select Candidate");
+return;
+}
+
+let votes=JSON.parse(localStorage.getItem("votes")) || {A:0,B:0,C:0};
+
+votes[candidate.value]++;
+
+localStorage.setItem("votes",JSON.stringify(votes));
+
+window.location.href="success.html";
+
+}
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
