@@ -3,7 +3,6 @@
 <head>
 <title>Online Voting System</title>
 
-<!-- Connect external CSS -->
 <link rel="stylesheet" href="style.css">
 
 <style>
@@ -21,6 +20,21 @@ color:white;
 text-align:center;
 }
 
+.container{
+background:rgba(0,0,0,0.6);
+padding:40px;
+border-radius:10px;
+}
+
+h1{
+margin-bottom:10px;
+}
+
+.steps{
+text-align:left;
+margin:20px 0;
+}
+
 button{
 padding:12px 25px;
 margin:10px;
@@ -32,19 +46,47 @@ cursor:pointer;
 
 .start{background:green;color:white;}
 .admin{background:#1e90ff;color:white;}
+.logout{background:red;color:white;}
+
 </style>
 
 </head>
 
 <body>
 
+<div class="container">
+
+<h2>Welcome to Online Voting System</h2>
+
 <h1>ONLINE VOTING SYSTEM</h1>
 
-<button class="start" onclick="location.href='aadhaar.html'">Start Voting</button>
-<button class="admin" onclick="location.href='admin_login.html'">Admin Login</button>
+<h3>Voting Steps:</h3>
 
-<!-- Connect JavaScript -->
+<div class="steps">
+<p>1️⃣ Aadhaar Verification</p>
+<p>2️⃣ Voter Details Verified</p>
+<p>3️⃣ Face Recognition</p>
+<p>4️⃣ Fingerprint Authentication</p>
+<p>5️⃣ Select Candidate</p>
+<p>6️⃣ Vote Submitted</p>
+</div>
+
+<button class="start" onclick="location.href='aadhaar.html'">Start Voting</button>
+
+<button class="admin" onclick="location.href='admin_login.html'">Admin Dashboard</button>
+
+<button class="logout" onclick="logout()">Logout</button>
+
+</div>
+
 <script src="script.js"></script>
+
+<script>
+function logout(){
+alert("Logged out successfully");
+window.location.href="index.html";
+}
+</script>
 
 </body>
 </html>
