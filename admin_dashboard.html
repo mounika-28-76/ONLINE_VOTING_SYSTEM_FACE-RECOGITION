@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+body{
+font-family:Arial;
+text-align:center;
+background:#f4f4f4;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+width:60%;
+}
+
+th,td{
+border:1px solid black;
+padding:10px;
+}
+
+th{
+background:#1e90ff;
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Voting Results</h1>
+
+<table>
+
+<tr>
+<th>Candidate</th>
+<th>Votes</th>
+</tr>
+
+<tr>
+<td>Candidate A</td>
+<td id="A"></td>
+</tr>
+
+<tr>
+<td>Candidate B</td>
+<td id="B"></td>
+</tr>
+
+<tr>
+<td>Candidate C</td>
+<td id="C"></td>
+</tr>
+
+</table>
+
+<script>
+
+let votes=JSON.parse(localStorage.getItem("votes")) || {A:0,B:0,C:0};
+
+document.getElementById("A").innerHTML=votes.A;
+document.getElementById("B").innerHTML=votes.B;
+document.getElementById("C").innerHTML=votes.C;
+
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
